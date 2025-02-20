@@ -50,10 +50,10 @@ const Home = () => {
     let todayPL = 0;
 
     fetchData?.userHolding?.forEach((item: any) => {
-      currentValue += item.ltp * item.quantity;
-      investment += item.avgPrice * item.quantity;
-      profitLoss += (item.ltp * item.quantity) - (item.avgPrice * item.quantity);
-      todayPL += (item.ltp - item.close) * item.quantity;
+      currentValue += item?.ltp * item?.quantity;
+      investment += item?.avgPrice * item?.quantity;
+      profitLoss += (item?.ltp * item?.quantity) - (item?.avgPrice * item?.quantity);
+      todayPL += (item?.ltp - item?.close) * item?.quantity;
     });
 
     return {
@@ -63,7 +63,6 @@ const Home = () => {
       todaysPL: todayPL.toFixed(2),
     };
   }, [fetchData]);
-
 
   const renderItem = ({ item }: any) => (
     <>
